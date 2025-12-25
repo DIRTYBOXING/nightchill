@@ -1,0 +1,148 @@
+{
+  "concepts": {
+    "Spartan Path": {
+      "tagId": "spartan-path",
+      "philosophy": "Discipline through challenge",
+      "description": "The Spartan Path represents the warrior's journey - building strength through structured discipline, consistent effort, and embracing discomfort as growth. This path values resilience, routine, and the power of pushing boundaries.",
+      "icon": "⚔️",
+      "dirtyBoxerTags": {
+        "gyms": [
+          "Iron Discipline",
+          "No-Excuse Zone",
+          "Warrior Training",
+          "Challenge Accepted",
+          "Grit Building"
+        ],
+        "mentors": [
+          "Battle-Tested",
+          "Discipline Coach",
+          "Accountability Partner",
+          "No Soft Words",
+          "Results Driven"
+        ],
+        "sponsors": [
+          "Fuel The Fight",
+          "Strength Support",
+          "Warrior Backing",
+          "Challenge Funding",
+          "Raw Energy"
+        ],
+        "maps": [
+          "Battle Zones",
+          "Training Grounds",
+          "Strength Corridors",
+          "Warrior Routes",
+          "Iron Path"
+        ]
+      },
+      "characteristics": [
+        "High intensity focus",
+        "Structured routines",
+        "Performance metrics",
+        "Goal-oriented approach",
+        "Competitive spirit"
+      ],
+      "suitableFor": [
+        "Those seeking structure through challenge",
+        "Athletes rebuilding discipline",
+        "Former competitors finding purpose",
+        "Anyone ready to embrace discomfort"
+      ]
+    },
+    "Wellness Graph": {
+      "tagId": "wellness-graph",
+      "philosophy": "Growth through understanding",
+      "description": "The Wellness Graph represents the healer's journey - tracking progress through self-awareness, gentle consistency, and emotional intelligence. This path values sustainable growth, mental health, and the power of small, measured steps.",
+      "icon": "📊",
+      "dirtyBoxerTags": {
+        "gyms": [
+          "Safe Space Training",
+          "Progress Not Perfection",
+          "Mind-Body Balance",
+          "Anxiety Aware",
+          "Healing Grounds"
+        ],
+        "mentors": [
+          "Empathy Guide",
+          "Journey Companion",
+          "Wellness Navigator",
+          "Soft Strength Coach",
+          "Understanding Ear"
+        ],
+        "sponsors": [
+          "Gentle Support",
+          "Sustainable Fuel",
+          "Care Package Provider",
+          "Wellness Backing",
+          "Soft Landing Fund"
+        ],
+        "maps": [
+          "Calm Routes",
+          "Wellness Corridors",
+          "Safe Havens",
+          "Progress Paths",
+          "Growth Zones"
+        ]
+      },
+      "characteristics": [
+        "Anxiety-accommodating",
+        "Flexible pacing",
+        "Emotional awareness",
+        "Data-driven insights",
+        "Holistic approach"
+      ],
+      "suitableFor": [
+        "Those rebuilding from anxiety",
+        "People needing gentle accountability",
+        "Anyone prioritizing mental health",
+        "Those tracking incremental progress"
+      ]
+    }
+  },
+  "comparison": {
+    "title": "Spartan Path vs Wellness Graph",
+    "subtitle": "Two approaches, one destination: lasting strength",
+    "description": "NightChill recognizes that everyone's journey is different. The Spartan Path embraces the dirty boxer mentality - getting in the ring, taking hits, and building armor through discipline. The Wellness Graph honors the analytical fighter - studying patterns, measuring growth, and building strength through understanding. Both are valid. Both lead to belonging.",
+    "dirtyBoxerPhilosophy": "The 'dirty boxer' isn't about fighting dirty - it's about getting in the ring when you're not perfect, showing up with your scars, and building strength through real struggle. Whether you're a Spartan warrior or a Wellness analyst, you're a dirty boxer if you keep showing up.",
+    "keyDifferences": {
+      "approach": {
+        "spartanPath": "Challenge first, comfort later",
+        "wellnessGraph": "Comfort enables challenge"
+      },
+      "measurement": {
+        "spartanPath": "Performance and results",
+        "wellnessGraph": "Progress and patterns"
+      },
+      "support": {
+        "spartanPath": "Tough love and accountability",
+        "wellnessGraph": "Empathy and understanding"
+      },
+      "environment": {
+        "spartanPath": "High energy, competitive",
+        "wellnessGraph": "Calm, reflective"
+      }
+    },
+    "synergy": "Many users find strength in both paths - using Spartan discipline on good days and Wellness flexibility on tough days. NightChill's tagging system lets you find the right support for where you are right now."
+  },
+  "unifiedDirtyBoxerTags": {
+    "description": "Tags that apply to entities supporting both paths",
+    "universal": [
+      "Real Talk Only",
+      "No Judgment Zone",
+      "Scars Welcome",
+      "Show Up Messy",
+      "Progress Over Perfect",
+      "Belonging Builder",
+      "Second Chances Given",
+      "Struggle Honored",
+      "Small Steps Count",
+      "Keep Fighting"
+    ],
+    "application": {
+      "gyms": "Any gym partner displaying these values",
+      "mentors": "Any mentor embodying these principles",
+      "sponsors": "Any sponsor supporting this philosophy",
+      "maps": "Any location tagged with these attributes"
+    }
+  }
+}
