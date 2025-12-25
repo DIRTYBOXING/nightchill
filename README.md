@@ -22,11 +22,16 @@ The "dirty boxer" represents getting in the ring when you're not perfect, showin
 
 ## Documentation
 
+### Guides & References
 - **[MAP-TAGGING-GUIDE.md](MAP-TAGGING-GUIDE.md)** - Comprehensive guide to the tagging system
 - **[TAG-QUICK-REFERENCE.md](TAG-QUICK-REFERENCE.md)** - Quick reference card for tags
+- **[TAGGING-VISUAL-SUMMARY.md](TAGGING-VISUAL-SUMMARY.md)** - Visual diagrams and decision trees
+
+### Configuration Files
 - **[map-support-tags.json](map-support-tags.json)** - Core tag definitions
 - **[spartan-wellness-concepts.json](spartan-wellness-concepts.json)** - Path philosophies and dirty boxer tags
 - **[example-tagged-locations.json](example-tagged-locations.json)** - Example implementations
+- **[location-schema.json](location-schema.json)** - JSON schema for validation
 
 ## Quick Start
 
