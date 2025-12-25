@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NightChill Location Schema",
+  "description": "Schema for validating NightChill locations with support tags",
+  "type": "object",
+  "required": ["id", "name", "type", "supportTags"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the location",
+      "pattern": "^[a-z]+-[0-9]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the location"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["gym", "mentor", "sponsor", "map"],
+      "description": "Type of entity"
+    },
+    "supportTags": {
+      "type": "array",
+      "description": "Array of support tags assigned to this location",
+      "items": {
+        "type": "string",
+        "enum": ["Coffee Support", "Mentor-Safe", "Anxiety-Friendly"]
+      },
+      "minItems": 1
+    },
+    "pathAlignment": {
+      "type": "string",
+      "enum": ["Spartan Path", "Wellness Graph", "Both", "Universal"],
+      "description": "Which path philosophy this location aligns with"
+    },
+    "dirtyBoxerTags": {
+      "type": "array",
+      "description": "Philosophical and approach tags",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the location"
+    },
+    "address": {
+      "type": "string",
+      "description": "Physical address (for physical locations)"
+    },
+    "features": {
+      "type": "object",
+      "description": "Specific features offered by this location"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "gym"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supportTags": {
+            "contains": {
+              "const": "Anxiety-Friendly"
+            }
+          }
+        },
+        "required": ["address"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "mentor"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supportTags": {
+            "contains": {
+              "const": "Mentor-Safe"
+            }
+          }
+        },
+        "required": ["specialization"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "sponsor"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supportTags": {
+            "contains": {
+              "const": "Coffee Support"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "spartanPathGymTags": [
+      "Iron Discipline",
+      "No-Excuse Zone",
+      "Warrior Training",
+      "Challenge Accepted",
+      "Grit Building"
+    ],
+    "spartanPathMentorTags": [
+      "Battle-Tested",
+      "Discipline Coach",
+      "Accountability Partner",
+      "No Soft Words",
+      "Results Driven"
+    ],
+    "spartanPathSponsorTags": [
+      "Fuel The Fight",
+      "Strength Support",
+      "Warrior Backing",
+      "Challenge Funding",
+      "Raw Energy"
+    ],
+    "spartanPathMapTags": [
+      "Battle Zones",
+      "Training Grounds",
+      "Strength Corridors",
+      "Warrior Routes",
+      "Iron Path"
+    ],
+    "wellnessGraphGymTags": [
+      "Safe Space Training",
+      "Progress Not Perfection",
+      "Mind-Body Balance",
+      "Anxiety Aware",
+      "Healing Grounds"
+    ],
+    "wellnessGraphMentorTags": [
+      "Empathy Guide",
+      "Journey Companion",
+      "Wellness Navigator",
+      "Soft Strength Coach",
+      "Understanding Ear"
+    ],
+    "wellnessGraphSponsorTags": [
+      "Gentle Support",
+      "Sustainable Fuel",
+      "Care Package Provider",
+      "Wellness Backing",
+      "Soft Landing Fund"
+    ],
+    "wellnessGraphMapTags": [
+      "Calm Routes",
+      "Wellness Corridors",
+      "Safe Havens",
+      "Progress Paths",
+      "Growth Zones"
+    ],
+    "universalDirtyBoxerTags": [
+      "Real Talk Only",
+      "No Judgment Zone",
+      "Scars Welcome",
+      "Show Up Messy",
+      "Progress Over Perfect",
+      "Belonging Builder",
+      "Second Chances Given",
+      "Struggle Honored",
+      "Small Steps Count",
+      "Keep Fighting"
+    ]
+  }
+}
