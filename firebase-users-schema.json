@@ -16,8 +16,12 @@
     "email": "string",
     "displayName": "string",
     "photoURL": "string (optional)",
+    "journeyStage": "string (enum: 'survival' | 'structure' | 'discipline' | 'purpose' | 'leadership')",
     "pathPreference": "string (enum: 'Spartan Path' | 'Wellness Graph' | 'Both')",
     "bio": "string (optional)",
+    "anxietySupport": "boolean",
+    "concessionEligible": "boolean",
+    "concessionType": "string (enum: 'poverty' | 'trial' | 'none')",
     "currentStreak": "number (days)",
     "longestStreak": "number (days)",
     "totalPoints": "number",
@@ -37,6 +41,13 @@
     },
     "createdAt": "timestamp",
     "updatedAt": "timestamp"
+  },
+  "journeyStages": {
+    "survival": "Breaking anxiety, finding safety",
+    "structure": "Building routine, first check-ins",
+    "discipline": "Consistent effort, streak building",
+    "purpose": "Clear goals, mentorship engagement",
+    "leadership": "Giving back, mentor role"
   },
   "firestore_security_rules": {
     "read": "if request.auth != null && request.auth.uid == resource.id",

@@ -76,5 +76,27 @@
     "Wellness Gym": ["Anxiety-Friendly", "Mentor-Safe"],
     "Support Point": ["Coffee Support", "Anxiety-Friendly"],
     "Mentorship Center": ["Mentor-Safe", "Coffee Support"]
-  }
+  },
+  "mapPinNames": {
+    "gym": "Safe Start",
+    "coffee": "Coffee Kindness",
+    "mentor": "Talk to a Mentor",
+    "support": "Quiet Support",
+    "general": "Step Forward"
+  },
+  "signatureTag": "Dirty Boxer: Coffee Kindness",
+  "coreMapTags": [
+    "NightChill Safe Gym",
+    "Dirty Boxer Coffee Drop",
+    "Mentor Nearby",
+    "Safe Space",
+    "Nutrition Support"
+  ],
+  "phase2Tags": [
+    "DV Support Point",
+    "Quiet Hours",
+    "Beginner Friendly",
+    "Women/Family Safe",
+    "Work Opportunities"
+  ]
 }

@@ -1,6 +1,6 @@
 # NightChill
 
-Journey-based wellness app helping people rebuild structure, discipline, and belonging through anxiety-friendly gyms, mentors, and coffee QR support.
+NightChill helps people break anxiety and rebuild life through training, mentoring, and community support. Discover anxiety-friendly gyms, mentors, and safe spaces designed to remove the fear of starting. Access small acts of support like QR coffee rewards when you're struggling, and progress through a 5-level journey from Survival to Leadership. It's not about fighting — it's about discipline, direction, belonging, and choosing a stronger path forward.
 
 ## The 5 Screens
 
