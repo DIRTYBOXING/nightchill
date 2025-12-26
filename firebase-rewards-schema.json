@@ -1,0 +1,65 @@
+{
+  "collection": "rewards",
+  "description": "Achievements and unlockable rewards for users",
+  "indexes": [
+    {
+      "fields": ["userId", "unlockedAt"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["rewardType"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated)",
+    "userId": "string (reference to users collection)",
+    "rewardType": "string (enum: 'badge' | 'voucher' | 'milestone' | 'achievement')",
+    "rewardId": "string (identifier for specific reward)",
+    "title": "string",
+    "description": "string",
+    "icon": "string (emoji or asset path)",
+    "pointsRequired": "number",
+    "unlocked": "boolean",
+    "unlockedAt": "timestamp (null if not unlocked)",
+    "used": "boolean (for vouchers)",
+    "usedAt": "timestamp (optional)",
+    "metadata": {
+      "streakDays": "number (optional)",
+      "checkInCount": "number (optional)",
+      "gymVisits": "number (optional)"
+    },
+    "createdAt": "timestamp"
+  },
+  "predefined_rewards": {
+    "badges": [
+      {
+        "id": "first_step",
+        "title": "First Step",
+        "description": "Completed your first check-in",
+        "icon": "👟",
+        "pointsRequired": 0
+      },
+      {
+        "id": "week_warrior",
+        "title": "Week Warrior",
+        "description": "7-day streak",
+        "icon": "⚔️",
+        "pointsRequired": 70
+      },
+      {
+        "id": "month_champion",
+        "title": "Month Champion",
+        "description": "30-day streak",
+        "icon": "🏆",
+        "pointsRequired": 300
+      }
+    ]
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && request.auth.uid == resource.data.userId",
+    "create": "if request.auth != null && request.auth.token.admin == true",
+    "update": "if request.auth != null && (request.auth.uid == resource.data.userId || request.auth.token.admin == true)",
+    "delete": "if false"
+  }
+}

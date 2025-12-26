@@ -1,0 +1,39 @@
+{
+  "collection": "journeyProgress",
+  "description": "Daily and milestone progress tracking for user journeys",
+  "indexes": [
+    {
+      "fields": ["userId", "date"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated or userId_YYYY-MM-DD)",
+    "userId": "string (reference to users collection)",
+    "date": "timestamp",
+    "checkInCompleted": "boolean",
+    "gymVisit": "boolean",
+    "mentorSession": "boolean",
+    "coffeeReceived": "boolean",
+    "dailyMood": "string (enum: 'great' | 'good' | 'okay' | 'struggling')",
+    "dailyNotes": "string (optional)",
+    "pointsEarnedToday": "number",
+    "streakDay": "number",
+    "milestones": {
+      "first_checkin": "boolean",
+      "week_1": "boolean",
+      "week_2": "boolean",
+      "month_1": "boolean",
+      "month_3": "boolean",
+      "month_6": "boolean"
+    },
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && request.auth.uid == resource.data.userId",
+    "create": "if request.auth != null && request.auth.uid == request.resource.data.userId",
+    "update": "if request.auth != null && request.auth.uid == resource.data.userId",
+    "delete": "if false"
+  }
+}

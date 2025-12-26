@@ -1,0 +1,37 @@
+{
+  "collection": "chats",
+  "description": "Messages between users and mentors",
+  "indexes": [
+    {
+      "fields": ["participants", "createdAt"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["senderId", "createdAt"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated)",
+    "participants": "array<string> (userIds involved in chat)",
+    "senderId": "string (reference to users)",
+    "receiverId": "string (reference to users)",
+    "message": "string",
+    "messageType": "string (enum: 'text' | 'encouragement' | 'checkin_share' | 'milestone')",
+    "read": "boolean",
+    "readAt": "timestamp (null until read)",
+    "relatedCheckIn": "string (optional reference to checkins)",
+    "relatedMilestone": "string (optional reference to rewards)",
+    "createdAt": "timestamp"
+  },
+  "notes": {
+    "implementation": "Simple 1-on-1 messaging for MVP. Group chats and channels can be added later.",
+    "mentor_verification": "Only verified mentors (from locations collection) can receive initial messages"
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && request.auth.uid in resource.data.participants",
+    "create": "if request.auth != null && request.auth.uid == request.resource.data.senderId && request.auth.uid in request.resource.data.participants",
+    "update": "if request.auth != null && request.auth.uid == resource.data.receiverId && request.resource.data.read == true",
+    "delete": "if false"
+  }
+}

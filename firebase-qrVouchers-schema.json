@@ -1,0 +1,43 @@
+{
+  "collection": "qrVouchers",
+  "description": "Coffee QR codes for giving and receiving support",
+  "indexes": [
+    {
+      "fields": ["sponsorUserId", "createdAt"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["recipientUserId", "redeemedAt"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["locationId", "status"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated)",
+    "qrCode": "string (unique signed code)",
+    "sponsorUserId": "string (reference to users - who paid)",
+    "recipientUserId": "string (reference to users - who redeemed, null until used)",
+    "locationId": "string (reference to locations - where redeemable)",
+    "amount": "number (dollar value)",
+    "status": "string (enum: 'active' | 'redeemed' | 'expired')",
+    "message": "string (optional message from sponsor)",
+    "anonymous": "boolean (hide sponsor identity)",
+    "expiresAt": "timestamp",
+    "redeemedAt": "timestamp (null until redeemed)",
+    "createdAt": "timestamp"
+  },
+  "cloud_function_operations": {
+    "generate": "Creates signed QR code with sponsor payment verification",
+    "redeem": "Validates QR, marks as redeemed, updates user stats",
+    "expire": "Scheduled function to expire unused vouchers after 30 days"
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && (request.auth.uid == resource.data.sponsorUserId || request.auth.uid == resource.data.recipientUserId || resource.data.anonymous == true)",
+    "create": "if request.auth != null && request.auth.uid == request.resource.data.sponsorUserId",
+    "update": "if request.auth != null && resource.data.status == 'active' && request.resource.data.status == 'redeemed'",
+    "delete": "if false"
+  }
+}

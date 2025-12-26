@@ -27,20 +27,27 @@ Users choose based on current needs, not permanent labels.
 
 ## Firebase Setup
 
-### Collections
-- `users` - User profiles and journey data
-- `locations` - Gyms, mentors, sponsors (see `firebase-locations-schema.json`)
-- `checkins` - User check-ins and visits
-- `journeyProgress` - Streak and milestone tracking
-- `rewards` - Achievements and unlocks
-- `qrVouchers` - Coffee QR codes
-- `chats` - Messages between users and mentors
+### Collections (Schemas Ready)
+All 7 collections have complete schemas with field definitions, indexes, and security rules:
 
-### Seed Data
-Import `firebase-seed-data.json` to get started with example locations.
+- **users** - User profiles and journey data ([schema](firebase-users-schema.json))
+- **locations** - Gyms, mentors, sponsors ([schema](firebase-locations-schema.json))
+- **checkins** - User check-ins and visits ([schema](firebase-checkins-schema.json))
+- **journeyProgress** - Streak and milestone tracking ([schema](firebase-journeyProgress-schema.json))
+- **rewards** - Achievements and unlocks ([schema](firebase-rewards-schema.json))
+- **qrVouchers** - Coffee QR codes ([schema](firebase-qrVouchers-schema.json))
+- **chats** - Messages between users and mentors ([schema](firebase-chats-schema.json))
 
-### Tags Reference
-See `map-support-tags.json` for tag definitions and validation rules.
+### Import Data
+- `firebase-seed-data.json` - 4 example locations ready to import
+- `map-support-tags.json` - Tag definitions and validation rules
+
+### Flutter Implementation
+See **[FLUTTER-SCREEN-FLOWS.md](FLUTTER-SCREEN-FLOWS.md)** for:
+- Screen-by-screen implementation guide
+- Firestore queries for each screen
+- Widget structure and navigation
+- Required packages
 
 ## Running the App
 

@@ -1,0 +1,33 @@
+{
+  "collection": "checkins",
+  "description": "User check-ins at gyms, with mentors, or sponsor locations",
+  "indexes": [
+    {
+      "fields": ["userId", "checkedInAt"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["locationId", "checkedInAt"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated)",
+    "userId": "string (reference to users collection)",
+    "locationId": "string (reference to locations collection)",
+    "locationType": "string (enum: 'gym' | 'mentor' | 'sponsor')",
+    "checkedInAt": "timestamp",
+    "notes": "string (optional)",
+    "mood": "string (enum: 'great' | 'good' | 'okay' | 'struggling')",
+    "pointsEarned": "number",
+    "streakActive": "boolean",
+    "geopoint": "GeoPoint { lat: number, lng: number }",
+    "createdAt": "timestamp"
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && request.auth.uid == resource.data.userId",
+    "create": "if request.auth != null && request.auth.uid == request.resource.data.userId",
+    "update": "if false",
+    "delete": "if false"
+  }
+}

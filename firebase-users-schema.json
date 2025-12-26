@@ -1,0 +1,47 @@
+{
+  "collection": "users",
+  "description": "User profiles with journey tracking and preferences",
+  "indexes": [
+    {
+      "fields": ["currentStreak"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["pathPreference"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (UID from Firebase Auth)",
+    "email": "string",
+    "displayName": "string",
+    "photoURL": "string (optional)",
+    "pathPreference": "string (enum: 'Spartan Path' | 'Wellness Graph' | 'Both')",
+    "bio": "string (optional)",
+    "currentStreak": "number (days)",
+    "longestStreak": "number (days)",
+    "totalPoints": "number",
+    "joinedAt": "timestamp",
+    "lastCheckIn": "timestamp",
+    "preferences": {
+      "notifications": "boolean",
+      "anxietyLevel": "string (enum: 'low' | 'medium' | 'high')",
+      "preferredGymTypes": "array<string>"
+    },
+    "stats": {
+      "totalCheckIns": "number",
+      "gymVisits": "number",
+      "mentorSessions": "number",
+      "coffeesReceived": "number",
+      "coffeesGiven": "number"
+    },
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null && request.auth.uid == resource.id",
+    "create": "if request.auth != null && request.auth.uid == request.resource.id",
+    "update": "if request.auth != null && request.auth.uid == resource.id",
+    "delete": "if request.auth != null && request.auth.uid == resource.id"
+  }
+}
