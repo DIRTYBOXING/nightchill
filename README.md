@@ -1,43 +1,57 @@
-# nightchill
-NightChill is a journey-based wellness app helping people rebuild structure, discipline, and belonging. By connecting users with anxiety-friendly gyms, mentors, role models, and simple support gestures like coffee QR codes, NightChill turns small steps into lasting strength.
+# NightChill
 
-## Map Support Tags System
+Journey-based wellness app helping people rebuild structure, discipline, and belonging through anxiety-friendly gyms, mentors, and coffee QR support.
 
-NightChill uses a comprehensive tagging system to help users find the right support at the right time:
+## The 5 Screens
 
-- **☕ Coffee Support** - Simple support gestures (coffee QR codes, material help)
-- **🤝 Mentor-Safe** - Verified mentors and guidance providers
-- **🛡️ Anxiety-Friendly** - Spaces designed to accommodate anxiety
+1. **Home** - Daily check-in and quick actions
+2. **Map** - Find nearby gyms, mentors, sponsors
+3. **Journey** - Track progress and streaks
+4. **Rewards** - Unlock achievements and vouchers
+5. **Chat** - Connect with mentors and community
 
-## Spartan Path vs Wellness Graph
+## Support Tags System
 
-Two complementary approaches to rebuilding strength:
+Three tags help users find the right support:
 
-- **⚔️ Spartan Path** - Discipline through challenge (warrior's journey)
-- **📊 Wellness Graph** - Growth through understanding (healer's journey)
+- **☕ Coffee Support** - QR codes for coffee sponsorship
+- **🤝 Mentor-Safe** - Verified mentors and guides
+- **🛡️ Anxiety-Friendly** - Safe, accommodating spaces
 
-## Dirty Boxer Philosophy
+## Two Paths
 
-The "dirty boxer" represents getting in the ring when you're not perfect, showing up with your scars, and building strength through real struggle. Whether you follow the Spartan Path or Wellness Graph, you're a dirty boxer if you keep showing up.
+- **⚔️ Spartan Path** - High intensity, structured discipline
+- **📊 Wellness Graph** - Data-driven, gentle progress
 
-## Documentation
+Users choose based on current needs, not permanent labels.
 
-### Guides & References
-- **[MAP-TAGGING-GUIDE.md](MAP-TAGGING-GUIDE.md)** - Comprehensive guide to the tagging system
-- **[TAG-QUICK-REFERENCE.md](TAG-QUICK-REFERENCE.md)** - Quick reference card for tags
-- **[TAGGING-VISUAL-SUMMARY.md](TAGGING-VISUAL-SUMMARY.md)** - Visual diagrams and decision trees
+## Firebase Setup
 
-### Configuration Files
-- **[map-support-tags.json](map-support-tags.json)** - Core tag definitions
-- **[spartan-wellness-concepts.json](spartan-wellness-concepts.json)** - Path philosophies and dirty boxer tags
-- **[example-tagged-locations.json](example-tagged-locations.json)** - Example implementations
-- **[location-schema.json](location-schema.json)** - JSON schema for validation
+### Collections
+- `users` - User profiles and journey data
+- `locations` - Gyms, mentors, sponsors (see `firebase-locations-schema.json`)
+- `checkins` - User check-ins and visits
+- `journeyProgress` - Streak and milestone tracking
+- `rewards` - Achievements and unlocks
+- `qrVouchers` - Coffee QR codes
+- `chats` - Messages between users and mentors
 
-## Quick Start
+### Seed Data
+Import `firebase-seed-data.json` to get started with example locations.
 
-1. Review the tagging guide to understand the system
-2. Use the quick reference for day-to-day lookups
-3. Check example locations to see tags in practice
-4. Implement tags for your gyms, mentors, sponsors, or maps
+### Tags Reference
+See `map-support-tags.json` for tag definitions and validation rules.
+
+## Running the App
+
+```bash
+# Firebase setup
+firebase init
+firebase deploy
+
+# Flutter app
+flutter pub get
+flutter run
+```
 
 **Small steps. Lasting strength. Real belonging.**

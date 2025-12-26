@@ -1,0 +1,73 @@
+{
+  "collection": "locations",
+  "description": "Gyms, mentors, and sponsors supporting NightChill users",
+  "indexes": [
+    {
+      "fields": ["type", "supportTags"],
+      "queryScope": "COLLECTION"
+    },
+    {
+      "fields": ["geopoint"],
+      "queryScope": "COLLECTION"
+    }
+  ],
+  "document_structure": {
+    "id": "string (auto-generated)",
+    "type": "string (enum: 'gym' | 'mentor' | 'sponsor')",
+    "name": "string",
+    "supportTags": "array<string> (from predefined tags)",
+    "pathAlignment": "string (enum: 'Spartan Path' | 'Wellness Graph' | 'Both')",
+    "dirtyBoxerTags": "array<string> (philosophy tags)",
+    "address": "string (optional for mentors)",
+    "geopoint": "GeoPoint { lat: number, lng: number }",
+    "description": "string",
+    "contact": {
+      "phone": "string (optional)",
+      "email": "string (optional)",
+      "website": "string (optional)"
+    },
+    "hours": "string (optional)",
+    "verified": "boolean",
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+  },
+  "validation_rules": {
+    "type_gym_requires": ["Anxiety-Friendly in supportTags"],
+    "type_mentor_requires": ["Mentor-Safe in supportTags"],
+    "type_sponsor_requires": ["Coffee Support in supportTags"]
+  },
+  "predefined_support_tags": [
+    "Coffee Support",
+    "Mentor-Safe", 
+    "Anxiety-Friendly"
+  ],
+  "predefined_path_tags": {
+    "Spartan Path": [
+      "Iron Discipline",
+      "No-Excuse Zone",
+      "Warrior Training",
+      "Battle-Tested",
+      "Accountability Partner"
+    ],
+    "Wellness Graph": [
+      "Safe Space Training",
+      "Progress Not Perfection",
+      "Mind-Body Balance",
+      "Empathy Guide",
+      "Journey Companion"
+    ],
+    "Universal": [
+      "Real Talk Only",
+      "No Judgment Zone",
+      "Scars Welcome",
+      "Show Up Messy",
+      "Keep Fighting"
+    ]
+  },
+  "firestore_security_rules": {
+    "read": "if request.auth != null",
+    "create": "if request.auth != null && request.auth.token.admin == true",
+    "update": "if request.auth != null && request.auth.token.admin == true",
+    "delete": "if request.auth != null && request.auth.token.admin == true"
+  }
+}
