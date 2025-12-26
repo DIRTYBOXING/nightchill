@@ -51,14 +51,46 @@ See **[FLUTTER-SCREEN-FLOWS.md](FLUTTER-SCREEN-FLOWS.md)** for:
 
 ## Running the App
 
+### 1. Deploy Firebase
 ```bash
-# Firebase setup
-firebase init
-firebase deploy
+firebase login
+firebase use nightchill-mvp
+firebase deploy --only firestore,storage
+```
 
-# Flutter app
+### 2. Import Seed Data
+Go to Firebase Console → Firestore → Import data → Select `firebase-seed-data.json`
+
+### 3. Configure Flutter
+```bash
+# Install FlutterFire CLI
+dart pub global activate flutterfire_cli
+
+# Configure Firebase for Flutter
+flutterfire configure
+
+# Get dependencies
 flutter pub get
+
+# Run app
 flutter run
 ```
+
+## Implementation Status
+
+### ✅ Complete
+- Firebase configuration (rules, indexes, storage)
+- All 7 collection schemas
+- Flutter app structure with bottom navigation
+- **Home screen** - Streak display, check-in, recent activity
+- **Map screen** - Location markers, filters, check-in
+
+### ⏳ Next Steps
+- Journey screen - Progress tracking
+- Rewards screen - Badges and QR vouchers
+- Chat screen - Mentor messaging
+- Cloud Functions - QR generation, streak calculation
+
+See **[SETUP-COMPLETE.md](SETUP-COMPLETE.md)** for detailed next steps and implementation guide.
 
 **Small steps. Lasting strength. Real belonging.**
