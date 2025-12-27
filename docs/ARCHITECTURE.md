@@ -234,7 +234,7 @@ interface Location {
   // Features
   hasQRReward: boolean;
   isVerified: boolean;
-  isBeginerFriendly: boolean;
+  isBeginnerFriendly: boolean;
   
   // Media
   images: string[];
