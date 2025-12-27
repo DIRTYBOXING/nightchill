@@ -1,0 +1,44 @@
+name: nightchill
+description: Journey-based wellness app helping people rebuild structure, discipline, and belonging.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Firebase
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.15.0
+  cloud_firestore: ^4.13.0
+  cloud_functions: ^4.5.0
+  firebase_storage: ^11.5.0
+  
+  # Maps
+  google_maps_flutter: ^2.5.0
+  geoflutterfire: ^3.0.0
+  geolocator: ^10.1.0
+  
+  # State Management
+  provider: ^6.1.0
+  
+  # UI
+  cupertino_icons: ^1.0.2
+  cached_network_image: ^3.3.0
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^3.5.0
+  
+  # Utils
+  intl: ^0.18.1
+  timeago: ^3.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
