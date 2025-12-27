@@ -1,0 +1,92 @@
+{
+  "locations": [
+    {
+      "id": "auto-generated-id-001",
+      "type": "gym",
+      "name": "Iron Haven Fitness",
+      "address": "123 Warrior Way, Downtown",
+      "geopoint": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      },
+      "supportTags": ["Anxiety-Friendly", "Mentor-Safe", "Coffee Support"],
+      "pathAlignment": "Spartan Path",
+      "dirtyBoxerTags": ["Real Talk Only", "Iron Discipline", "Warrior Training"],
+      "description": "High-intensity training with anxiety-accommodating private hours. On-site mentors and coffee QR support.",
+      "contact": {
+        "phone": "555-0101",
+        "email": "info@ironhaven.fit"
+      },
+      "hours": "5am-11pm daily",
+      "verified": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "auto-generated-id-002",
+      "type": "gym",
+      "name": "Calm Strength Studio",
+      "address": "456 Wellness Blvd, Midtown",
+      "geopoint": {
+        "lat": 40.7580,
+        "lng": -73.9855
+      },
+      "supportTags": ["Anxiety-Friendly", "Mentor-Safe"],
+      "pathAlignment": "Wellness Graph",
+      "dirtyBoxerTags": ["Progress Over Perfect", "Safe Space Training", "Mind-Body Balance"],
+      "description": "Gentle-paced wellness facility with progress tracking and mental health integration.",
+      "contact": {
+        "email": "hello@calmstrength.co"
+      },
+      "hours": "6am-9pm daily",
+      "verified": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "auto-generated-id-003",
+      "type": "mentor",
+      "name": "Marcus Steel",
+      "geopoint": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      },
+      "supportTags": ["Mentor-Safe", "Coffee Support"],
+      "pathAlignment": "Spartan Path",
+      "dirtyBoxerTags": ["Battle-Tested", "Accountability Partner", "Real Talk Only"],
+      "description": "Former boxer helping others rebuild through structured discipline. Meets at partner gyms and coffee spots.",
+      "contact": {
+        "email": "marcus@nightchill.app"
+      },
+      "verified": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "auto-generated-id-004",
+      "type": "sponsor",
+      "name": "Community Coffee Coalition",
+      "address": "Multiple locations downtown",
+      "geopoint": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      },
+      "supportTags": ["Coffee Support", "Anxiety-Friendly"],
+      "pathAlignment": "Both",
+      "dirtyBoxerTags": ["No Judgment Zone", "Show Up Messy"],
+      "description": "Local coffee shops with QR code system for anonymous coffee sponsorship.",
+      "contact": {
+        "website": "coffeecoalition.org"
+      },
+      "verified": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "usage_notes": {
+    "import_to_firestore": "Use Firebase Admin SDK or Firestore console to import these documents",
+    "auto_ids": "Let Firestore auto-generate document IDs, don't use the id field values shown",
+    "geopoint": "Use Firebase GeoPoint type for location queries",
+    "timestamps": "Use Firebase serverTimestamp() for createdAt/updatedAt in production"
+  }
+}

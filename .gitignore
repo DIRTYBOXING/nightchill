@@ -91,6 +91,25 @@ temp/
 *.crt
 *.p12
 *.keystore
+serviceAccountKey.json
+google-services.json
+GoogleService-Info.plist
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Flutter
+flutter_app/build/
+flutter_app/.dart_tool/
+flutter_app/.packages
+flutter_app/pubspec.lock
+
+# Generated Firebase Options (contains API keys)
+# Note: We include a placeholder version, users should generate their own
+# flutter_app/lib/firebase_options.dart
 
 # Other files and folders
 .settings/

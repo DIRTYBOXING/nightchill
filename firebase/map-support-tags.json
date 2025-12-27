@@ -1,0 +1,102 @@
+{
+  "mapSupportTags": {
+    "Coffee Support": {
+      "tagId": "coffee-support",
+      "description": "Locations offering coffee QR codes and simple support gestures to help you rebuild through small acts of connection",
+      "icon": "☕",
+      "category": "support",
+      "attributes": {
+        "supportType": "material",
+        "anxietyLevel": "low",
+        "interactionRequired": "minimal"
+      },
+      "useCases": [
+        "Sponsor a coffee for someone in need",
+        "Receive a warm gesture on tough days",
+        "Build micro-connections without pressure"
+      ]
+    },
+    "Mentor-Safe": {
+      "tagId": "mentor-safe",
+      "description": "Trusted mentors and role models who understand the journey and provide guidance without judgment",
+      "icon": "🤝",
+      "category": "mentorship",
+      "attributes": {
+        "supportType": "guidance",
+        "anxietyLevel": "low-medium",
+        "interactionRequired": "moderate"
+      },
+      "useCases": [
+        "Connect with experienced guides",
+        "Get advice from those who've walked the path",
+        "Build lasting mentor relationships"
+      ]
+    },
+    "Anxiety-Friendly": {
+      "tagId": "anxiety-friendly",
+      "description": "Spaces designed to accommodate anxiety, offering quiet zones, flexible schedules, and understanding environments",
+      "icon": "🛡️",
+      "category": "environment",
+      "attributes": {
+        "supportType": "environmental",
+        "anxietyLevel": "accommodating",
+        "interactionRequired": "flexible"
+      },
+      "useCases": [
+        "Train in low-pressure environments",
+        "Access gyms with anxiety-aware staff",
+        "Find spaces that respect your pace"
+      ]
+    }
+  },
+  "entityTags": {
+    "gyms": {
+      "requiredTags": ["Anxiety-Friendly"],
+      "optionalTags": ["Coffee Support", "Mentor-Safe"],
+      "description": "Gyms partnered with NightChill to provide safe, understanding workout environments"
+    },
+    "mentors": {
+      "requiredTags": ["Mentor-Safe"],
+      "optionalTags": ["Coffee Support", "Anxiety-Friendly"],
+      "description": "Verified mentors who guide users through their wellness journey"
+    },
+    "sponsors": {
+      "requiredTags": ["Coffee Support"],
+      "optionalTags": ["Mentor-Safe", "Anxiety-Friendly"],
+      "description": "Community sponsors providing material and emotional support"
+    },
+    "maps": {
+      "requiredTags": [],
+      "optionalTags": ["Coffee Support", "Mentor-Safe", "Anxiety-Friendly"],
+      "description": "Map locations displaying available support resources and safe spaces"
+    }
+  },
+  "tagCombinations": {
+    "Full Support Hub": ["Coffee Support", "Mentor-Safe", "Anxiety-Friendly"],
+    "Wellness Gym": ["Anxiety-Friendly", "Mentor-Safe"],
+    "Support Point": ["Coffee Support", "Anxiety-Friendly"],
+    "Mentorship Center": ["Mentor-Safe", "Coffee Support"]
+  },
+  "mapPinNames": {
+    "gym": "Safe Start",
+    "coffee": "Coffee Kindness",
+    "mentor": "Talk to a Mentor",
+    "support": "Quiet Support",
+    "general": "Step Forward"
+  },
+  "signatureTag": "Dirty Boxer: Coffee Kindness",
+  "coreMapTags": [
+    "NightChill Safe Gym",
+    "Dirty Boxer Coffee Drop",
+    "Mentor Nearby",
+    "Safe Space",
+    "Nutrition Support"
+  ],
+  "phase2Tags": [
+    "DV Support Point",
+    "Quiet Hours",
+    "Beginner Friendly",
+    "Women/Family Safe",
+    "Work Opportunities"
+  ]
+}
